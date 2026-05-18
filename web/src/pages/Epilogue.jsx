@@ -48,7 +48,7 @@ export default function Epilogue({ state, resetGame }) {
             {/* Chronicle summary */}
             <div className="terminal-block mb-8">
               <div className="text-neon text-xs tracking-widest uppercase mb-3">Chronicle Summary</div>
-              <div className="space-y-2 text-sm text-green-300">
+              <div className="space-y-2 text-sm text-neon-soft">
                 {char.name && (
                   <div>
                     <span className="text-neon-dim">Subject:</span>{' '}

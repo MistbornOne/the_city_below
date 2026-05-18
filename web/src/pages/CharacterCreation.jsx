@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Layout from '../components/Layout.jsx'
 import OracleDrawer from '../components/OracleDrawer.jsx'
+import ThemePicker from '../components/ThemePicker.jsx'
 
 const OCCUPATION_SUGGESTIONS = [
   'Transit Engineer',
@@ -26,7 +27,7 @@ function Field({ label, hint, id, children }) {
   )
 }
 
-export default function CharacterCreation({ state, setCharacterField, update }) {
+export default function CharacterCreation({ state, setCharacterField, update, theme, setTheme }) {
   const navigate = useNavigate()
   const char = state.character
   const [errors, setErrors] = useState({})
@@ -43,6 +44,36 @@ export default function CharacterCreation({ state, setCharacterField, update }) 
     if (!char.incident.trim()) e.incident = 'An incident is required.'
     if (!char.strangeMemory.trim()) e.strangeMemory = 'A strange memory is required.'
     return e
+  }
+
+  if (state.currentScene) {
+    return (
+      <Layout>
+        <div className="max-w-2xl mx-auto px-5 py-12">
+          <div className="mb-8">
+            <div className="text-neon-dim text-xs tracking-widest uppercase mb-2">Display Settings</div>
+            <h1 className="glow-text text-2xl tracking-widest uppercase">Terminal Palette</h1>
+            <p className="narrative-p text-sm mt-3">
+              Choose the color scheme for your chronicle. Changes apply immediately.
+            </p>
+          </div>
+
+          <div className="neon-divider my-6" />
+
+          <div className="terminal-block mb-8">
+            <ThemePicker theme={theme} setTheme={setTheme} />
+          </div>
+
+          <button
+            type="button"
+            onClick={() => navigate(`/play/${state.currentScene}`)}
+            className="btn-primary"
+          >
+            ← Return to Chronicle
+          </button>
+        </div>
+      </Layout>
+    )
   }
 
   function handleSubmit(e) {
@@ -69,6 +100,10 @@ export default function CharacterCreation({ state, setCharacterField, update }) 
         </div>
 
         <div className="neon-divider my-6" />
+
+        <div className="terminal-block mb-8">
+          <ThemePicker theme={theme} setTheme={setTheme} />
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* Name + Age row */}

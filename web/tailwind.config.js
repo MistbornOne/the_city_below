@@ -4,13 +4,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        neon: '#00FF41',
-        'neon-dim': '#00b300',
-        'neon-bright': '#39FF14',
-        'neon-faint': '#003300',
-        'terminal': '#0a0f0a',
-        'terminal-light': '#0f1a0f',
-        'terminal-mid': '#1a2a1a',
+        neon:             'rgb(var(--neon-rgb) / <alpha-value>)',
+        'neon-dim':       'rgb(var(--neon-dim-rgb) / <alpha-value>)',
+        'neon-bright':    'rgb(var(--neon-bright-rgb) / <alpha-value>)',
+        'neon-faint':     'rgb(var(--neon-faint-rgb) / <alpha-value>)',
+        'neon-soft':      'rgb(var(--neon-soft-rgb) / <alpha-value>)',
+        terminal:         'rgb(var(--terminal-rgb) / <alpha-value>)',
+        'terminal-light': 'rgb(var(--terminal-light-rgb) / <alpha-value>)',
+        'terminal-mid':   'rgb(var(--terminal-mid-rgb) / <alpha-value>)',
       },
       fontFamily: {
         mono: ['"Share Tech Mono"', '"Courier New"', 'Courier', 'monospace'],
@@ -45,17 +46,17 @@ export default {
           '50%': { opacity: '0' },
         },
         glowPulse: {
-          '0%, 100%': { textShadow: '0 0 4px #00FF41, 0 0 8px #00FF41' },
-          '50%': { textShadow: '0 0 8px #00FF41, 0 0 20px #00FF41, 0 0 40px #00FF4166' },
+          '0%, 100%': { textShadow: '0 0 calc(4px * var(--glow-mult)) rgb(var(--neon-rgb)), 0 0 calc(8px * var(--glow-mult)) rgb(var(--neon-rgb))' },
+          '50%': { textShadow: '0 0 calc(8px * var(--glow-mult)) rgb(var(--neon-rgb)), 0 0 calc(20px * var(--glow-mult)) rgb(var(--neon-rgb)), 0 0 calc(40px * var(--glow-mult)) rgb(var(--neon-rgb) / 0.4)' },
         },
       },
       boxShadow: {
-        'neon': '0 0 5px #00FF41, 0 0 10px #00FF41, 0 0 20px #00FF4166',
-        'neon-sm': '0 0 3px #00FF41, 0 0 6px #00FF4166',
-        'neon-inner': 'inset 0 0 10px #00FF4122',
+        'neon':       '0 0 5px rgb(var(--neon-rgb)), 0 0 10px rgb(var(--neon-rgb)), 0 0 calc(20px * var(--glow-mult)) rgb(var(--neon-rgb) / 0.4)',
+        'neon-sm':    '0 0 3px rgb(var(--neon-rgb)), 0 0 6px rgb(var(--neon-rgb) / 0.4)',
+        'neon-inner': 'inset 0 0 10px rgb(var(--neon-rgb) / 0.13)',
       },
       textShadow: {
-        'neon': '0 0 4px #00FF41, 0 0 8px #00FF41',
+        'neon': '0 0 calc(4px * var(--glow-mult)) rgb(var(--neon-rgb)), 0 0 calc(8px * var(--glow-mult)) rgb(var(--neon-rgb))',
       },
     },
   },

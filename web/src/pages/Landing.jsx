@@ -75,7 +75,7 @@ export default function Landing({ state, resetGame }) {
       <div className="mt-16 text-center">
         <p
           className="text-xs tracking-[0.4em] uppercase glow-text-dim"
-          style={{ color: blinkOn ? '#00b300' : '#003300', transition: 'color 0.8s ease' }}
+          style={{ color: blinkOn ? 'rgb(var(--neon-dim-rgb))' : 'rgb(var(--neon-faint-rgb))', transition: 'color 0.8s ease' }}
         >
           WE ARE WAITING BELOW
         </p>

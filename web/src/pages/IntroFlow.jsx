@@ -32,7 +32,7 @@ function renderContent(block, i) {
           className={`my-4 p-4 border-l-2 ${
             block.ominous
               ? 'border-neon bg-neon-faint text-neon glow-text-soft text-sm leading-relaxed'
-              : 'border-neon-dim bg-terminal-light text-green-300 text-sm leading-relaxed'
+              : 'border-neon-dim bg-terminal-light text-neon-soft text-sm leading-relaxed'
           }`}
         >
           {block.text}
@@ -51,7 +51,7 @@ function renderContent(block, i) {
           {block.levels.map((level, j) => (
             <div key={j} className="border border-neon-faint p-3 bg-terminal">
               <div className="text-neon text-xs tracking-wider uppercase mb-1 glow-text-soft">{level.label}</div>
-              <p className="text-green-300 text-sm leading-relaxed">{level.description}</p>
+              <p className="text-neon-soft text-sm leading-relaxed">{level.description}</p>
             </div>
           ))}
         </div>
@@ -62,7 +62,7 @@ function renderContent(block, i) {
           {block.days.map((day, j) => (
             <div key={j} className="flex gap-3 items-baseline">
               <span className="text-neon text-xs tracking-widest min-w-[50px]">{day.label}</span>
-              <span className="text-green-300 text-sm">{day.title}</span>
+              <span className="text-neon-soft text-sm">{day.title}</span>
             </div>
           ))}
         </div>

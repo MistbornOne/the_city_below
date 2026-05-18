@@ -130,6 +130,11 @@ export const introSections = [
         type: 'callout',
         text: 'Because you\'re journaling alongside the story, you could play through multiple times with different outcomes. If you do play a second time, choose the opposite path.',
       },
+      {
+        type: 'note',
+        title: 'Your Progress is Saved',
+        text: 'Your chronicle — character, journal entries, and place in the story — saves automatically in your browser as you play. You can close the tab, come back days later, and pick up exactly where you left off. Just be aware: clearing your browser\'s cache or site data will permanently erase your save.',
+      },
     ],
   },
 ]

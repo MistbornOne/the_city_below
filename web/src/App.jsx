@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import { useGameState } from './hooks/useGameState.js'
+import { useTheme } from './hooks/useTheme.js'
 import Layout from './components/Layout.jsx'
 import Landing from './pages/Landing.jsx'
 import IntroFlow from './pages/IntroFlow.jsx'
@@ -11,6 +12,7 @@ import SceneView from './pages/SceneView.jsx'
 import Epilogue from './pages/Epilogue.jsx'
 
 export default function App() {
+  const { theme, setTheme } = useTheme()
   const {
     state,
     update,
@@ -52,6 +54,8 @@ export default function App() {
             state={state}
             setCharacterField={setCharacterField}
             update={update}
+            theme={theme}
+            setTheme={setTheme}
           />
         }
       />
