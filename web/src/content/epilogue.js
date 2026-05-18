@@ -1,0 +1,25 @@
+export const epilogueContent = {
+  id: 'epilogue',
+  title: 'Epilogue',
+  location: {
+    place: 'Virescent City',
+    level: 'Level Unknown',
+    time: 'Day ?: Week ?: 3105  ?:??',
+  },
+  text: [
+    'Virescent City has never been the perfect city.',
+    'Sure, we market it as such, but everyone knows perfection is unattainable.',
+    'Isn\'t it?',
+    'Well, that doesn\'t matter. What matters is you have experienced a small part of what the city has to offer. One slice of an infinite number of possibilities.',
+    'Reality.',
+    'It\'s a funny thing, isn\'t it?',
+    'Perspective. That\'s what we all have.',
+    'Perhaps it\'s all we have.',
+    'We encourage you to revisit Virescent City and see what other future possibilities you unlock. You could play this game a dozen times and end up with a dozen different characters who believe different things. You may uncover questions you haven\'t considered each time you do so.',
+    'Even if you don\'t visit us again.',
+    'We\'re thankful.',
+    'Thankful that you chose to spend the time you did.',
+    'But just know…',
+  ],
+  closing: '"We are waiting down below."',
+}

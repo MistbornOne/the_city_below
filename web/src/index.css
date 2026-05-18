@@ -1,0 +1,380 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: #050805;
+  color: #00FF41;
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #050805; }
+::-webkit-scrollbar-thumb { background: #00b300; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #00FF41; }
+
+/* ── Scanlines overlay ── */
+.scanlines::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.08) 3px,
+    rgba(0, 0, 0, 0.08) 4px
+  );
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ── Rain background ── */
+.rain-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 8px,
+      rgba(0, 255, 65, 0.012) 8px,
+      rgba(0, 255, 65, 0.012) 9px
+    ),
+    repeating-linear-gradient(
+      180deg,
+      transparent 0px,
+      transparent 15px,
+      rgba(0, 255, 65, 0.008) 15px,
+      rgba(0, 255, 65, 0.008) 16px
+    );
+  animation: rainFall 3s linear infinite;
+}
+
+@keyframes rainFall {
+  0%   { background-position: 0 0; }
+  100% { background-position: 0 120px; }
+}
+
+/* ── Ambient glow ── */
+.ambient-glow {
+  position: fixed;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 40%;
+  background: radial-gradient(ellipse at center, rgba(0,255,65,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Glow text ── */
+.glow-text {
+  text-shadow: 0 0 4px #00FF41, 0 0 10px #00FF41;
+}
+.glow-text-soft {
+  text-shadow: 0 0 3px #00FF4188;
+}
+.glow-text-dim {
+  text-shadow: 0 0 6px #00b30055;
+}
+
+/* ── Neon border glow ── */
+.glow-border {
+  box-shadow: 0 0 4px #00FF41, 0 0 8px #00FF4133, inset 0 0 6px #00FF4108;
+}
+.glow-border-soft {
+  box-shadow: 0 0 2px #00b30077, inset 0 0 4px #00FF4108;
+}
+
+/* ── Terminal block ── */
+.terminal-block {
+  background: #030a03;
+  border: 1px solid #00b30055;
+  border-left: 3px solid #00FF41;
+  box-shadow: 0 0 4px #00FF4122, inset 0 0 20px #00FF4108;
+  padding: 1.5rem;
+  position: relative;
+}
+
+.terminal-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, #00FF41, transparent);
+  opacity: 0.4;
+}
+
+/* ── Location stamp ── */
+.location-stamp {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.72rem;
+  color: #00b300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid #00b30033;
+  padding: 0.3rem 0.75rem;
+  display: inline-block;
+  background: #020a02;
+  text-shadow: 0 0 6px #00b300;
+}
+
+/* ── Journal textarea ── */
+.journal-textarea {
+  background: #020802;
+  border: 1px solid #00b30055;
+  color: #a0e8a0;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  resize: vertical;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-height: 120px;
+}
+.journal-textarea:focus {
+  border-color: #00FF41;
+  box-shadow: 0 0 6px #00FF4144, inset 0 0 8px #00FF4106;
+}
+.journal-textarea::placeholder {
+  color: #00b30055;
+}
+
+/* ── Buttons ── */
+.btn-primary {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #00FF41;
+  border: 1px solid #00FF41;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-shadow: 0 0 4px #00FF41;
+  box-shadow: 0 0 4px #00FF4133;
+}
+.btn-primary:hover {
+  background: #00FF4115;
+  box-shadow: 0 0 8px #00FF4166, inset 0 0 8px #00FF4108;
+  text-shadow: 0 0 8px #00FF41;
+}
+.btn-primary:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #00b300;
+  border: 1px solid #00b30055;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  border-color: #00b300;
+  color: #00FF41;
+  background: #00b30010;
+}
+
+.btn-ghost {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: #00b30088;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.btn-ghost:hover {
+  color: #00FF41;
+}
+
+/* ── Path choice buttons ── */
+.btn-path {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  background: #030a03;
+  color: #a0e8a0;
+  border: 1px solid #00b30077;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+.btn-path:hover, .btn-path.selected {
+  border-color: #00FF41;
+  background: #00FF4110;
+  color: #00FF41;
+  box-shadow: 0 0 6px #00FF4133;
+}
+
+/* ── Echo callout ── */
+.echo-callout {
+  border-left: 2px solid #00b30077;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  background: #00b30010;
+  color: #7acc7a;
+  font-style: italic;
+  font-size: 0.88em;
+}
+
+/* ── Anomaly choice list ── */
+.anomaly-option {
+  background: #020802;
+  border: 1px solid #00b30033;
+  color: #7acc7a;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.82rem;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  width: 100%;
+  letter-spacing: 0.02em;
+}
+.anomaly-option:hover, .anomaly-option.selected {
+  border-color: #00FF4177;
+  background: #00FF410a;
+  color: #00FF41;
+}
+
+/* ── Progress dots ── */
+.progress-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #003300;
+  border: 1px solid #00b30055;
+  transition: all 0.3s;
+}
+.progress-dot.active {
+  background: #00FF41;
+  box-shadow: 0 0 4px #00FF41;
+}
+.progress-dot.complete {
+  background: #00b300;
+}
+
+/* ── Oracle drawer ── */
+.oracle-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  background: #030a03;
+  border-left: 1px solid #00FF4133;
+  box-shadow: -4px 0 20px #00FF4115;
+  z-index: 500;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+.oracle-drawer.open {
+  transform: translateX(0);
+}
+
+/* ── Narrative paragraphs ── */
+.narrative-p {
+  color: #c0e8c0;
+  line-height: 1.85;
+  margin-bottom: 0.9rem;
+  font-size: 0.92rem;
+}
+.narrative-p em {
+  color: #00FF41;
+  font-style: normal;
+}
+.narrative-p strong {
+  color: #00FF41;
+  text-shadow: 0 0 3px #00FF4166;
+}
+
+/* ── Prompt number ── */
+.prompt-number {
+  color: #00FF41;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-shadow: 0 0 4px #00FF41;
+  margin-bottom: 0.35rem;
+  display: block;
+}
+
+/* ── Section divider ── */
+.neon-divider {
+  border: none;
+  border-top: 1px solid #00b30033;
+  margin: 2rem 0;
+  position: relative;
+}
+.neon-divider::after {
+  content: '◈';
+  position: absolute;
+  top: -0.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00b300;
+  background: #050805;
+  padding: 0 0.5rem;
+  font-size: 0.7rem;
+}
+
+/* ── Cursor blink ── */
+.cursor-blink::after {
+  content: '█';
+  animation: blink 1s step-end infinite;
+  color: #00FF41;
+}
+
+/* ── Comm message ── */
+.comm-message {
+  background: #000000;
+  border: 1px solid #00FF4155;
+  color: #00FF41;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  padding: 0.7rem 1rem;
+  text-shadow: 0 0 6px #00FF41;
+  box-shadow: 0 0 8px #00FF4122, inset 0 0 10px #00FF4108;
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+/* ── Flicker animation on key titles ── */
+.animate-flicker {
+  animation: flicker 4s ease-in-out infinite;
+}
+
+/* ── No-scrollbar utility ── */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
