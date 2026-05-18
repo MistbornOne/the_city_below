@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { tutorialSections } from '../content/tutorial.js'
 
 const oracleData = tutorialSections.find(s => s.id === 'oracles')
 
 export default function OracleDrawer() {
   const [open, setOpen] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <>
@@ -44,7 +46,7 @@ export default function OracleDrawer() {
             )}
             <ol className="space-y-1">
               {section.items.map((item, j) => (
-                <li key={j} className="text-xs text-green-300 leading-relaxed pl-1">
+                <li key={j} className="text-xs text-neon-soft leading-relaxed pl-1">
                   {item}
                 </li>
               ))}
@@ -56,6 +58,15 @@ export default function OracleDrawer() {
             )}
           </div>
         ))}
+
+        <div className="mt-6 pt-4 border-t border-neon-faint">
+          <button
+            onClick={() => { setOpen(false); navigate('/create') }}
+            className="btn-ghost w-full text-left"
+          >
+            ◈ Change Theme
+          </button>
+        </div>
       </div>
     </>
   )

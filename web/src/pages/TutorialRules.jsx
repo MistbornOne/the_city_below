@@ -57,7 +57,7 @@ export default function TutorialRules() {
                   )}
                   <ol className="space-y-1">
                     {block.items.map((item, j) => (
-                      <li key={j} className="text-green-300 text-sm leading-relaxed">{item}</li>
+                      <li key={j} className="text-neon-soft text-sm leading-relaxed">{item}</li>
                     ))}
                   </ol>
                   {block.note && (

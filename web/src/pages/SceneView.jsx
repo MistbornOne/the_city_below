@@ -23,7 +23,7 @@ function PathChoicePrompt({ prompt, onChoice, current }) {
             <div className="font-mono text-xs tracking-widest uppercase mb-1 text-neon">
               {current === choice.value ? '▶ ' : '  '}{choice.label}
             </div>
-            <div className="text-xs text-green-300 leading-relaxed">{choice.description}</div>
+            <div className="text-xs text-neon-soft leading-relaxed">{choice.description}</div>
           </button>
         ))}
       </div>
