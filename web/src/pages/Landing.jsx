@@ -81,9 +81,14 @@ export default function Landing({ state, resetGame }) {
         </p>
       </div>
 
-      {/* Version info */}
-      <div className="absolute bottom-4 right-4 text-neon-dim opacity-30 text-xs tracking-widest">
-        VIRESCENT CITY — LEVEL 10
+      {/* Footer */}
+      <div className="absolute bottom-4 left-0 right-0 px-4 flex justify-between items-end">
+        <div className="text-neon-dim opacity-40 text-xs tracking-widest">
+          &copy; 2026 Ian Watkins. All rights reserved.
+        </div>
+        <div className="text-neon-dim opacity-30 text-xs tracking-widest">
+          VIRESCENT CITY — LEVEL 10
+        </div>
       </div>
     </div>
   )

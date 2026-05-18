@@ -83,6 +83,10 @@ export default function Epilogue({ state, resetGame }) {
               Your journal entries are saved locally in your browser.<br />
               Play again and choose the other path for a different experience.
             </p>
+
+            <p className="text-neon-dim opacity-40 text-xs text-center mt-6 tracking-widest">
+              &copy; 2026 Ian Watkins. All rights reserved.
+            </p>
           </div>
         )}
       </div>
