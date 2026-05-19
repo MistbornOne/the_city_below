@@ -127,7 +127,7 @@ export const day1Scene = {
         'The stairwell is far deeper than it should be',
         'A map or sign changes as you get closer',
         'A stranger stares at you far too long, then looks away as if they recognize you',
-        'The symbol you imagined in the Prologue appears nearby',
+        
       ],
     },
     {
