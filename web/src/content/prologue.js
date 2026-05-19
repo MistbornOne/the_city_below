@@ -49,7 +49,7 @@ export const prologueScene = {
     {
       id: 'prologue_q2',
       number: 'II',
-      text: 'Describe the first physical sensation you felt when you saw the unsent message.',
+      text: 'Describe the first physical sensation you felt when you saw the message without a sender.',
       placeholder: 'Write in your character\'s voice…',
     },
     {
