@@ -177,7 +177,7 @@ export const day7Scene = {
     {
       id: 'day7_q4',
       number: 'IV',
-      text: 'Artifact of the day — create or describe one additional artifact from this experience:',
+      text: 'Create or describe one additional artifact from this experience:',
       isAnomalyChoice: true,
       choices: [
         'Something hanging above the mantle that shouldn\'t be there',

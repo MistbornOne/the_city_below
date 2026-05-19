@@ -58,15 +58,10 @@ export const prologueScene = {
       text: 'What does the phrase "WE ARE WAITING BELOW" make you think of?',
       placeholder: 'Write in your character\'s voice…',
     },
+    
     {
       id: 'prologue_q4',
       number: 'IV',
-      text: 'Draw or describe the first symbol that comes into your mind.',
-      placeholder: 'Describe the symbol in words…',
-    },
-    {
-      id: 'prologue_q5',
-      number: 'V',
       text: 'End your entry with a line that begins with:',
       endingPrefix: '"I think tonight is the first time I\'ve felt…"',
       placeholder: '"I think tonight is the first time I\'ve felt…"',
