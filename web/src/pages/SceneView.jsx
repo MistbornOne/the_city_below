@@ -215,7 +215,7 @@ export default function SceneView({ state, update, setJournalEntry, markSceneCom
         </h1>
 
         {/* Location stamp */}
-        <LocationStamp location={scene.location} />
+        <LocationStamp location={scene.location} character={state.character} />
 
         <div className="neon-divider my-5" />
 

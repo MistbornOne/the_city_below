@@ -1,10 +1,12 @@
 import React from 'react'
 
-export default function LocationStamp({ location }) {
+export default function LocationStamp({ location, character }) {
   if (!location) return null
   return (
     <div className="mb-6 space-y-1">
-      <div className="location-stamp">{location.place}</div>
+      <div className="location-stamp">{character.name} | {character.occupation} | Age: {character.age}</div>
+      <div classname="block">
+        <span className="location-stamp">{location.place}</span>
       <div className="block">
         <span className="location-stamp">{location.level}</span>
       </div>
@@ -12,5 +14,6 @@ export default function LocationStamp({ location }) {
         <span className="location-stamp">{location.time}</span>
       </div>
     </div>
+  </div>
   )
 }
